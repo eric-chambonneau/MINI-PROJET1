@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=Dancing+Script&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: black;
+  user-select: none;
+  color: blue;
+  font-family: "Dancing Script", cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 90vw;
+  display: flex;
+}
+.panel {
+  height: 80vh;
+  background: url(./media/explorer.bmp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex: 0.5;
+  margin: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: flex 700ms ease-in-out;
+  position: relative;
+}
+
+.panel h3 {
+  font-size: 24px;
+  margin: 0;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 5;
+}
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out 0.4s;
+}
+@media screen and (orientation: portrait) {
+  .container {
+    width: 100vw;
+  }
+  .panel:nth-of-type(4) .panel:nth-of-type(5) {
+    display: none;
+  }
+}
